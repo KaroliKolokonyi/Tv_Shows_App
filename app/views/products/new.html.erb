@@ -1,0 +1,22 @@
+<h1>New TV Show</h1>
+
+<%= form_tag "/tv_shows", method: :post do %>
+  <div>
+   Name: <input type="text" name="name">
+  </div>
+  <div>
+    Show Genre: <input type="text" name="show_genre">
+  </div>
+  <div>
+    Image: <input type="text" name="image">
+  </div>
+   <div>
+    Production Year: <input type="text" name="production_year">
+  </div>
+  <div>
+    Production Film Company: <input type="text" name="production_film_company">
+  </div>
+  <div>
+    <input type="submit" name="New TV Show">
+  </div>
+<% end %>

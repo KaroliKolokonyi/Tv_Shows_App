@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  show_genre: MyString
+  image: MyString
+  production_film_company: MyString
+  production_year: 1
+
+two:
+  name: MyString
+  show_genre: MyString
+  image: MyString
+  production_film_company: MyString
+  production_year: 1
