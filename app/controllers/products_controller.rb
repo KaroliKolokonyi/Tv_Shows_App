@@ -1,9 +1,18 @@
 class ProductsController < ApplicationController
 
   def index 
+
+    filter_var = params[:filter]
+
+    if filter_var
+      @products = Product.all.order (filter_var)
+    
+    else 
     @products = Product.all 
 
-    render "tv_shows.html.erb"
+  end 
+
+    # render "tv_shows.html.erb"
   
   end 
 
@@ -22,8 +31,10 @@ class ProductsController < ApplicationController
    image = params[:image]
    production_year = params[:production_year]
    production_film_company = params[:production_film_company]
+   description = params[:description]
+   price = params[:price]
 
-   product = Product.new({name: name, show_genre: show_genre, image: image, production_year: production_year, production_film_company: production_film_company})
+   product = Product.new({name: name, show_genre: show_genre, image: image, production_year: production_year, production_film_company: production_film_company, description: description, price: price})
 
    product.save 
   flash[:success] = "TV Show Created"
@@ -44,6 +55,8 @@ def update
   product.image = params[:image]
   product.production_year = params[:production_year]
   product.production_film_company = params[:production_film_company]
+  product.description = params[:description]
+  product.price = params[:price]
   product.save
 
      flash[:success] = "TV Show Updated"

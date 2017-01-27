@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125133412) do
+ActiveRecord::Schema.define(version: 20170126115411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20170125133412) do
     t.string   "image"
     t.string   "production_film_company"
     t.integer  "production_year"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.text     "description"
+    t.decimal  "price",                   precision: 12, scale: 4
   end
 
 end
