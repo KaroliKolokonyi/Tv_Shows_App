@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-  get "/tv_shows", to: 'products#index'
-  get "/tv_shows/new", to: 'products#new'
-  get "/tv_shows/:id",to: 'products#show'
-  post "/tv_shows",to: 'products#create'
+  get "/products", to: 'products#index'
+  get "/products/new", to: 'products#new'
+  get "/products/:id",to: 'products#show'
+  post "/products",to: 'products#create'
 
-  get "/tv_shows/:id/edit", to: 'products#edit'
+  get "/products/:id/edit", to: 'products#edit'
 
-  patch "/tv_shows/:id", to: 'products#update'
+  patch "/products/:id", to: 'products#update'
 
-  delete "/tv_shows/:id", to: 'products#destroy'
+  delete "/products/:id", to: 'products#destroy'
 
 end

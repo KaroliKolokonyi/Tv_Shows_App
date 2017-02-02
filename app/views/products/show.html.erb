@@ -1,15 +1,16 @@
 <h1> TV Show Discription </h1>
 
-<b>Name:</b><%=@product.name %><br>
+<b>Name:</b><%= @product.name %><br>
 <b>Genre: </b><%= @product.show_genre %><br>
 <img src="<%= @product.image %>">
 <b>Production Year:</b><%= @product.production_year %><br>
 <b>Producing Company:</b><%= @product.production_film_company %><br>
 <b>TV Show Description:</b><%= @product.description %><br>
-<b>Price:</b><%= @product.price %><br>
+<b>Price: $ </b><%= @product.price %><br>
+<b>Supplier: </b><%= @product.supplier.name %><br>
 
-<%= button_to "Edit", "/tv_shows#{@product.id}/edit", method: :get %>
-<%= button_to "Delete", "/tv_shows/#{@product.id}", method: :delete %>
+<%= button_to "Edit", "/products/#{@product.id}/edit", method: :get %>
+<%= button_to "Delete", "/products/#{@product.id}", method: :delete %>
 
 
 

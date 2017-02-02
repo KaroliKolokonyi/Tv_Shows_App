@@ -1,0 +1,30 @@
+
+<body>
+  <h1>The Following are the Available TV Shows</h1>
+  
+</body>
+
+<div class="row">
+  <% @products.each_slice(3) do |three_products| %>
+   
+    <div class="row">
+        <% three_products.each do |product| %>
+          <div class="col-md-4">
+          <div class="well well-lg">
+            <h2><%= link_to product.name, "/products/#{product.id}" %></h2>
+            <img src="<%= product.image %>" class="img-responsive">
+            <b>Show Genre:</b><%= product.show_genre %>
+            <div><b>Production Year: </b> <%= product.production_year %></div>
+            <b>Production Company: </b><%=product.production_film_company %>
+
+            <div><b>TV Show Description:</b><h5><%= product.description %></h5>
+            </div>
+            <b>Price:</b>$<%= product.price %>
+
+            </div>
+
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+</div>

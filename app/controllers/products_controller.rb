@@ -2,24 +2,27 @@ class ProductsController < ApplicationController
 
   def index 
 
-    filter_var = params[:filter]
-
-    if filter_var
-      @products = Product.all.order (filter_var)
     
-    else 
-    @products = Product.all 
+if params[:filter]
+      @products = Product.all.order(price: params[:price])
 
-  end 
+    elsif params[:sort] == "discount"
+      @products = Product.where("price < ?", 20)
+    else
+      @products = Product.all
+    end
 
-    # render "tv_shows.html.erb"
-  
-  end 
+    render "products.html.erb"
+  end
+
 
    def show 
-    @product = Product.find_by(id: params[:id])
-
-    end 
+    if params[:id] == "random"
+      @product = Product.all.sample
+     else
+      @product = Product.find_by(id: params[:id])
+     end
+  end
 
     def new 
 
@@ -39,7 +42,7 @@ class ProductsController < ApplicationController
    product.save 
   flash[:success] = "TV Show Created"
 
- redirect_to "/tv_shows/#{product.id}"
+ redirect_to "/products/#{product.id}"
 
 end 
 
@@ -60,7 +63,7 @@ def update
   product.save
 
      flash[:success] = "TV Show Updated"
-     redirect_to "/tv_shows/#{product.id}"
+     redirect_to "/products/#{product.id}"
   end
 
 def destroy
@@ -68,7 +71,7 @@ def destroy
     product.delete
  flash[:warning] = "TV Show Deleted!"
 
-     redirect_to "/tv_shows"
+     redirect_to "/products"
 end 
 
  end 

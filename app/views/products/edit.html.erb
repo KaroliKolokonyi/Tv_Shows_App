@@ -1,6 +1,6 @@
 <h1>Edit TV Show</h1>
 
-<%= form_tag "/tv_shows/#{@product.id}", method: :patch do -%>
+<%= form_tag "/products/#{@product.id}", method: :patch do -%>
   <div>
     Name: <input type="text" name="name" value="<%= @product.name %>">
   </div>
@@ -10,10 +10,13 @@
   <div>
     IMAGE: <input type="text" name="image" value="<%= @product.image %>">
   </div>
+<div>
+     Production Company: <input type="text" name="production_film_company" value="<%=@product.production_film_company %>"></div>
+
+      <div>
 
   <div>
      Production Year: <input type="text" name="production_year" value="<%=@product.production_year %>"></div>
-
 
       <div>
     TV Show Description: <input type="text" name="description" value="<%=@product.production_year %>"></div>
