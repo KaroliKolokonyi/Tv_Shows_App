@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
+  get "/", to: 'products#index'
+
   get "/products", to: 'products#index'
   get "/products/new", to: 'products#new'
   get "/products/:id",to: 'products#show'
@@ -12,4 +14,12 @@ Rails.application.routes.draw do
 
   delete "/products/:id", to: 'products#destroy'
 
+  get "/signup", to: 'users#new'
+  post "/users", to: 'users#create'
+
+  get "/login", to: 'sessions#new'
+  post "/login", to: 'sessions#create'
+  delete "/logout", to: 'sessions#destroy'
+
 end
+
