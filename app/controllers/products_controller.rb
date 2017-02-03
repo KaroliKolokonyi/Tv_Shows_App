@@ -31,6 +31,11 @@ if params[:filter]
   end
 
     def new 
+      unless current_user
+      flash[:message] = "Only signed in users can create add Tv show!"
+      
+      redirect_to "/signup"
+    end
 
     end 
 
@@ -43,7 +48,7 @@ if params[:filter]
    description = params[:description]
    price = params[:price]
 
-   product = Product.new({name: name, show_genre: show_genre, image: image, production_year: production_year, production_film_company: production_film_company, description: description, price: price})
+   product = Product.new({name: name, show_genre: show_genre, image: image, production_year: production_year, production_film_company: production_film_company, description: description, price: price, user_id: current_user.id})
 
    product.save 
   flash[:success] = "TV Show Created"
