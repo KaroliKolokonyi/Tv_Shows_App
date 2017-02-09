@@ -10,7 +10,7 @@ session[:count] += 1
 
     
 if params[:filter]
-      @products = Product.all.order(price: params[:price])
+      @products = Product.all.order(price:params[:price])
 
     elsif params[:sort] == "discount"
       @products = Product.where("price < ?", 20)

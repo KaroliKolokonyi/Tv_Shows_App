@@ -1,0 +1,12 @@
+<h2> <b>Supplier Name:</b> <%= @supplier.name %> </a></h2>
+  <ul>
+    <li><b>Email: </b> <%= @supplier.email %> </li>
+    <li> <b>Phone Number:</b><%= @supplier.phone %> </li>
+  </ul> 
+<div>
+<a href = "/suppliers/<%= @supplier.id %>/edit"> <input type = "submit" value = "Edit"> </a>
+</div>
+
+<div>
+<%= button_to "delete", @suppliers, :method => :delete %>
+</div>

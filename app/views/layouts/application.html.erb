@@ -39,7 +39,11 @@
             <li><a href="products?filter=price">Filter BY Price</a></li>
              <li><a href="products?filter=desc">Filter BY Highest to lowest</a></li>
               <li><a href="products?sort=discount">Discount Movies</a></li>
-  <li><a href="tv_shows?randome">Discount Movies</a></li>
+
+        <% Category.all.each do |category| %>
+              <li><a href="/products/?category=<%= category.name %>"><%= category.name.capitalize %></a></li>
+          <% end %>
+
 
             <li role="separator" class="divider"></li>
             <li role="separator" class="divider"></li>

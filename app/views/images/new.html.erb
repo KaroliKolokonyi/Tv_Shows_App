@@ -1,0 +1,25 @@
+<h1> New Image </h1>
+
+<%= form_tag"/images", method: :post do  %>
+
+<div>
+  Image Url:
+  <input type = "text" name = "url">
+</div>
+
+<div>
+    Product Name:
+    <select name="product_id">
+      <option value="" disabled selected>Select the product</option>
+      <% @products.each do |product| %>
+        <option value="<%= product.id %>"><%= product.name %></option>
+      <% end %>
+    </select>
+      
+</div>
+
+<div>
+  <input type="submit" value="Create Image">
+</div>
+
+<% end %>

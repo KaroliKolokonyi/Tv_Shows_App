@@ -9,9 +9,7 @@ Rails.application.routes.draw do
   post "/products",to: 'products#create'
 
   get "/products/:id/edit", to: 'products#edit'
-
   patch "/products/:id", to: 'products#update'
-
   delete "/products/:id", to: 'products#destroy'
 
   get "/signup", to: 'users#new'
@@ -20,6 +18,19 @@ Rails.application.routes.draw do
   get "/login", to: 'sessions#new'
   post "/login", to: 'sessions#create'
   delete "/logout", to: 'sessions#destroy'
+
+  get "/suppliers", to: 'suppliers#index'
+  get "/suppliers/:id", to: 'suppliers#show'
+  get "/images", to:'images#index'
+  get "/images/:id", to:'images#show'
+  get "/images/new", to:'images#new'
+  post "/images", to:'images#create'
+
+  get "/orders/:id", to: 'orders#show'
+
+  get "/carted_products", to: 'cartedproducts#index'
+  post "carted_products", to: 'cartedproducts#create'
+ 
 
 end
 

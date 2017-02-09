@@ -1,0 +1,15 @@
+<h1> All Images </h1>
+
+<div class="row">
+  <% @images.each_slice(3) do |three_images| %>
+    <div class="row">
+        <% three_images.each do |image| %>
+          <div class="col-md-4">
+            <h2><%= link_to image.product.name, "/images/#{image.id}" %></h2>
+            <img src="<%= image.url %>" class="img-responsive">
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+
+</div>
